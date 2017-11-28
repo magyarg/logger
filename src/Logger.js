@@ -38,6 +38,19 @@ function Logger() {
         this.resolve();
     }
 
+    /**
+     * Returns an ERROR level log entry
+     */
+    this.warning = function (logMessage) {
+        this.logLevel = 'ERROR';
+        this.logMessage = logMessage;
+        this.resolve();
+    }
+
+    /**
+     * Resolves the log call and returns the formatted
+     * console message
+     */
     this.resolve = function() {
         console.log("[" + this.dateTime() + "][" + this.logLevel + "] - " + this.logMessage);
     }
